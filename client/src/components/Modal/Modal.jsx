@@ -1,7 +1,6 @@
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import stylesCss from "./Modal.module.css";
 import { useEffect, createContext, useContext } from "react";
-import cn from "classnames";
 
 const ModalContext = createContext();
 
@@ -71,7 +70,7 @@ const ModalHeader = ({ children }) => {
     <div className={stylesCss.reactModalHeader}>
       <div className={stylesCss.reactModalTitle}>{children}</div>
       <DismissButton
-        className={cn(stylesCss.btnClose, "form__heading-btn close-btn")}
+        className={stylesCss.btnClose}
       >
         &times;
       </DismissButton>
@@ -83,13 +82,8 @@ const ModalBody = ({ children }) => {
   return <div className={stylesCss.reactModalBody}>{children}</div>;
 };
 
-const ModalFooter = ({ children }) => {
-  return <div className={stylesCss.reactModalFooter}>{children}</div>;
-};
-
 Modal.Header = ModalHeader;
 Modal.Body = ModalBody;
-Modal.Footer = ModalFooter;
 Modal.DismissButton = DismissButton;
 
 export default Modal;

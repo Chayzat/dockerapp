@@ -42,7 +42,7 @@ function App() {
         {posts.length ? (
           <Post posts={posts} author={author}/>
         ) : (
-          <div className="post-container center">
+          <div className="spin-container center">
             <TailSpin
               height="80"
               width="80"
